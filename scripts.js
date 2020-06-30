@@ -9,6 +9,7 @@ $("#searchBtn").on("click",function(){
 
     var zipcode = $("#ziptext").val();
     getZip(zipcode);
+    getYelp(zipcode);
 })
 
 // Function to get the map, should be bassed off of input zip code or city
@@ -19,8 +20,6 @@ function initMap() {
     // The map, centered at city
     map = new google.maps.Map(
     document.getElementById('map'), {zoom: 10, center: city});
-    // The marker, positioned at city
-    var marker = new google.maps.Marker({position: city, map: map});
 
     map.addListener('click', function(e) {
         placeMarkerAndPanTo(e.latLng, map);
@@ -51,8 +50,7 @@ function getZip(zipcode) {
                     
                     latVal = response.results[0].geometry.location.lat;
                     lngVal = response.results[0].geometry.location.lng;
-                    
-                    
+                   
                     //Updates the map with the right coordinates
                     map.setCenter({lat: latVal, lng: lngVal}); 
                     
@@ -136,3 +134,22 @@ function getWeather(latVal,lngVal){
       });
 
     }
+
+    //Function for yelp data
+    function getYelp(zipcode){
+
+      var myurl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=fishing&location="+zipcode;
+
+         $.ajax({
+            url: myurl,
+            headers: {
+             'Authorization':'Bearer LZBc3MawxL6gYhmt6U-V4wywNl4PlpzLuP_oEdCfbEGKe_RkxmMcD7ynfbAk8Wut5jfDs-nMJEqOLQd88nuSkkIfz1dwmJYEIo20bC1bCfIbdmQ9w3fb9XpxCb76XnYx',
+         },
+            method: 'GET',
+            dataType: 'json',
+            success: function(data){
+              console.log(data);
+
+    }
+  });
+}
