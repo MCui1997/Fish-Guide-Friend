@@ -158,6 +158,7 @@ function getWeather(latVal,lngVal){
                 var name = data.businesses[i].alias;
 
                 $("#businessName").append(name);
+                $("#businessName").append("<br>");
                 console.log(name);
               }
 
