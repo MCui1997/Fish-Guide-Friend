@@ -138,7 +138,7 @@ function getWeather(latVal,lngVal){
     //Function for yelp data
     function getYelp(zipcode){
 
-      var myurl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=fishing&location="+zipcode;
+      var myurl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?categories=fishing&location="+zipcode;
 
          $.ajax({
             url: myurl,
@@ -149,6 +149,17 @@ function getWeather(latVal,lngVal){
             dataType: 'json',
             success: function(data){
               console.log(data);
+
+              var business = data.businesses
+            
+
+              for (var i =0; i <business.length; i++){
+
+                var name = data.businesses[i].alias;
+
+                $("#businessName").append(name);
+                console.log(name);
+              }
 
     }
   });
