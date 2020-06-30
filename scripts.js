@@ -10,7 +10,20 @@ $("#searchBtn").on("click",function(){
     var zipcode = $("#ziptext").val();
     getZip(zipcode);
     getYelp(zipcode);
+
+    $("#businessName").empty();
+    
 })
+
+//if enter key is pressed
+$('#ziptext').keypress(function(event){
+  var keycode = (event.keyCode ? event.keyCode : event.which);
+  if(keycode == '13'){
+      
+      $("#searchBtn").click();
+  }
+});
+
 
 // Function to get the map, should be bassed off of input zip code or city
 function initMap() {
@@ -59,9 +72,7 @@ function getZip(zipcode) {
 
             }
 
-            else{
-                alert("error");
-            }
+          
         });
     
     }
@@ -85,7 +96,7 @@ function placeMarkerAndPanTo(latLng, map) {
       map.panTo(latLng);
 
       getWeather(latVal,lngVal);
-      console.log(latLng);
+      
 }
 
 // Function to update the weather when you click on the map
@@ -116,10 +127,27 @@ function getWeather(latVal,lngVal){
               var wind = response.current.wind_speed;
               var uv = response.current.uvi;
 
+              var tempKelvin1 = response.daily[1].temp.day;
+              var humidity1 = response.daily[1].humidity;
+              var wind1 = response.daily[1].wind_speed;
+              var uv1 = response.daily[1].uvi
+
+              var tempKelvin2 = response.daily[2].temp.day;
+              var humidity2 = response.daily[2].humidity;
+              var wind2 = response.daily[2].wind_speed;
+              var uv2 = response.daily[2].uvi
+
+              console.log(response);
 
               //Convert kelvings to celsius, then finally fahrenheit
               var tempCelsius = tempKelvin - 273;
               var tempFahrenheit = (tempCelsius * (9/5)) + 32;
+
+              var tempCelsius1 = tempKelvin1 - 273;
+              var tempFahrenheit1 = (tempCelsius1 * (9/5)) + 32;
+
+              var tempCelsius2 = tempKelvin2 - 273;
+              var tempFahrenheit2 = (tempCelsius2 * (9/5)) + 32;
 
               //Display values to the screen
               $("#tempLabel").text(Math.round(tempFahrenheit)+"°F");
@@ -127,6 +155,15 @@ function getWeather(latVal,lngVal){
               $("#windLabel").text(wind+" MPH");
               $("#uvLabel").text(uv);
               
+              $("#tempLabel1").text(Math.round(tempFahrenheit1)+"°F");
+              $("#humidLabel1").text(Math.round(humidity1)+"%");
+              $("#windLabel1").text(wind1+" MPH");
+              $("#uvLabel1").text(uv1);
+              
+              $("#tempLabel2").text(Math.round(tempFahrenheit2)+"°F");
+              $("#humidLabel2").text(Math.round(humidity2)+"%");
+              $("#windLabel2").text(wind2+" MPH");
+              $("#uvLabel2").text(uv2);
 
             });
 
@@ -138,6 +175,8 @@ function getWeather(latVal,lngVal){
 
     //Function for yelp data
     function getYelp(zipcode){
+
+     
 
       var myurl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?categories=fishing&location="+zipcode;
 
@@ -152,7 +191,7 @@ function getWeather(latVal,lngVal){
             
               
             
-
+              // For loop to get all data values from businesses, can change how many businesses we want
               for (var i =0; i <5; i++){
 
                 var name = data.businesses[i].name;
@@ -165,7 +204,7 @@ function getWeather(latVal,lngVal){
                 var businessLink =$('<a>',{
                   target: "_blank",
                   href: url,
-                  style: "width: 100%",
+                  style: "width: 100%; text-align:center;",
                   text: "Yelp"
                 });
 
@@ -180,7 +219,7 @@ function getWeather(latVal,lngVal){
                   
               });
                 
-                
+                //Append everything to html
                 $("#businessName").append(businessBtn);
                 $("#businessName").append(businessLink);
                 $("#businessName").append("<br>");
@@ -193,6 +232,7 @@ function getWeather(latVal,lngVal){
   });
 }
 
+//If the yelp business button is clicked, map will update with marker and go over there
 $(document).on("click","#businessBtn", function(){
 
 
@@ -204,6 +244,7 @@ $(document).on("click","#businessBtn", function(){
   console.log(lngVal);
   //Updates the map with the right coordinates
   map.setCenter({lat: latVal, lng: lngVal}); 
+  getWeather(latVal,lngVal);
 
   var location = {lat:latVal, lng:lngVal}
 
