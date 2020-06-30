@@ -19,7 +19,12 @@
             <div class="container">
               <h1 class="display-4">Fish Guide Friend</h1>
               <p class="lead">Your friend for finding fishing guides</p>
-              <marquee>fishy fishy!</marquee>
+              <marquee behavior="scroll" direction="left">
+                <img src="https://img2.pngio.com/freshwater-fish-rainbow-trout-animal-fish-png-download-2374-freshwater-trout-png-2374_818.png" width="240" height="80" alt="Natural" />
+              </marquee>
+              <marquee behavior="scroll" direction="right">
+                <img src="https://proangler.us/wp-content/uploads/2014/06/fp_catfishhardheadleft.png" width="240" height="80" alt="Natural" />
+              </marquee>
             </div>
           </div>
 
@@ -27,8 +32,9 @@
 
     <div id="search" class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Ex. 78738" id = "ziptext">
+        <div class="form-inline form-group"></div>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="searchBtn"><i class="fa fa-search"></i></button>
+          <button class="btn btn-primary" type="button" id="searchBtn"><i class="fa fa-search"></i></button>
         </div>
       </div>
     </div>
@@ -36,7 +42,7 @@
       <div class = "container" id = "mainCont">
         <div class = "row">
           <div  class = "col-md-3">
-            <div class = " container" id = "yelpCont">
+            <div class = " scrollable" id = "yelpCont">
 
             <h3>Business</h3>
             <p id = "businessName"></p>
@@ -48,13 +54,27 @@
           </div>
 
           <div class = "col-md-3" id = "weatherCont">
-            <h3>Weather</h3>
-
+            <div class = "scrollable">
+            <h3>Weather Forecast</h3>
+            <h4>Current</h4>
             <p> Temp: <span id = "tempLabel"></span> </p>
             <p> Humidity: <span id = "humidLabel"></span> </p>
             <p> Wind Speed: <span id = "windLabel"></span> </p>
             <p> UVI: <span id = "uvLabel"></span> </p>
 
+            <h4>Day 2</h4>
+            <p> Temp: <span id = "tempLabel1"></span> </p>
+            <p> Humidity: <span id = "humidLabel1"></span> </p>
+            <p> Wind Speed: <span id = "windLabel1"></span> </p>
+            <p> UVI: <span id = "uvLabel1"></span> </p>
+
+            <h4>Day 3</h4>
+            <p> Temp: <span id = "tempLabel2"></span> </p>
+            <p> Humidity: <span id = "humidLabel2"></span> </p>
+            <p> Wind Speed: <span id = "windLabel2"></span> </p>
+            <p> UVI: <span id = "uvLabel2"></span> </p>
+
+          </div>
 
           </div>
         </div>
