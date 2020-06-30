@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url("Assets/bobber.jpg");
+    background-image: url("Assets/water.png");
     background-size: cover;
     background-attachment: fixed;
 }
@@ -25,6 +25,7 @@ body {
 
     border-style: solid;
     height: 400px;
+    background-color: whitesmoke;
 }
 
 #mapCont{
@@ -32,19 +33,18 @@ body {
     height: 400px;
     border-left-style: solid;
     border-right-style: solid;
-    background-color: whitesmoke;
+    
 }
 
 #map {
-    height: 400px;  
+    height: 98%;  
     width: 100%;  
    }
 
-#weatherCont{
-    background-color: whitesmoke;
-}
 
-#yelpCont{
-    background-color: whitesmoke;
-}
 
+.scrollable{
+
+    height: 400px;
+    overflow-y: auto;
+}
