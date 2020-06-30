@@ -25,6 +25,7 @@
     height: 400px;
     border-left-style: solid;
     border-right-style: solid;
+    background-color: whitesmoke;
 }
 
 #map {
@@ -32,4 +33,11 @@
     width: 100%;  
    }
 
+#weatherCont{
+    background-color: whitesmoke;
+}
+
+#yelpCont{
+    background-color: whitesmoke;
+}
 
