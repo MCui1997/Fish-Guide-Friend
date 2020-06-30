@@ -19,7 +19,12 @@
             <div class="container">
               <h1 class="display-4">Fish Guide Friend</h1>
               <p class="lead">Your friend for finding fishing guides</p>
-              <marquee>fishy fishy!</marquee>
+              <marquee behavior="scroll" direction="left">
+                <img src="https://img2.pngio.com/freshwater-fish-rainbow-trout-animal-fish-png-download-2374-freshwater-trout-png-2374_818.png" width="240" height="80" alt="Natural" />
+              </marquee>
+              <marquee behavior="scroll" direction="right">
+                <img src="https://proangler.us/wp-content/uploads/2014/06/fp_catfishhardheadleft.png" width="240" height="80" alt="Natural" />
+              </marquee>
             </div>
           </div>
 
@@ -27,8 +32,9 @@
 
     <div id="search" class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Ex. 78738" id = "ziptext">
+        <div class="form-inline form-group"></div>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="searchBtn"><i class="fa fa-search"></i></button>
+          <button class="btn btn-primary" type="button" id="searchBtn"><i class="fa fa-search"></i></button>
         </div>
       </div>
     </div>
