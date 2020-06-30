@@ -2,6 +2,7 @@
 var latVal = 0;
 var lngVal = 0;
 var map;
+var marker;
 
 //If the search button is clicked for zipcode
 $("#searchBtn").on("click",function(){
@@ -18,12 +19,16 @@ function initMap() {
     // The map, centered at city
     map = new google.maps.Map(
     document.getElementById('map'), {zoom: 10, center: city});
-    // // The marker, positioned at city
-    // var marker = new google.maps.Marker({position: city, map: map});
+    // The marker, positioned at city
+    var marker = new google.maps.Marker({position: city, map: map});
+
+    map.addListener('click', function(e) {
+        placeMarkerAndPanTo(e.latLng, map);
+      });
+    
   }
 
  
-
 // Function to turn the zipcode into coordinates and then update map 
 function getZip(zipcode) {
 
@@ -63,5 +68,24 @@ function getZip(zipcode) {
     
     }
 
+//Allows the user to place a marker and pans there
+function placeMarkerAndPanTo(latLng, map) {
+        
+    if (marker){
+      marker.setPosition(latLng)
+    } else{
 
- 
+      marker = new google.maps.Marker({
+        position: latLng,
+        map: map
+
+    });
+  }
+    
+      latVal = marker.getPosition().lat();
+      lngVal = marker.getPosition().lng();
+      map.panTo(latLng);
+
+      console.log(latVal);
+      console.log(lngVal);
+}
