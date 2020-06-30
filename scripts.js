@@ -85,6 +85,7 @@ function placeMarkerAndPanTo(latLng, map) {
       map.panTo(latLng);
 
       getWeather(latVal,lngVal);
+      console.log(latLng);
 }
 
 // Function to update the weather when you click on the map
@@ -148,19 +149,68 @@ function getWeather(latVal,lngVal){
             method: 'GET',
             dataType: 'json',
             success: function(data){
-              console.log(data);
-
-              var business = data.businesses
+            
+              
             
 
-              for (var i =0; i <business.length; i++){
+              for (var i =0; i <5; i++){
 
-                var name = data.businesses[i].alias;
+                var name = data.businesses[i].name;
+                var url = data.businesses[i].url;
 
-                $("#businessName").append(name);
-                console.log(name);
+                
+                var lat = data.businesses[i].coordinates.latitude;
+                var lng = data. businesses[i].coordinates.longitude;
+
+                var businessLink =$('<a>',{
+                  target: "_blank",
+                  href: url,
+                  style: "width: 100%",
+                  text: "Yelp"
+                });
+
+             
+                var businessBtn =$('<button>',{
+                    
+                    text: name,
+                    style: "width: 100%",
+                    id: "businessBtn",
+                    value: lat,
+                    name: lng,
+                  
+              });
+                
+                
+                $("#businessName").append(businessBtn);
+                $("#businessName").append(businessLink);
+                $("#businessName").append("<br>");
+                $("#businessName").append("<br>");
+
+              
               }
 
     }
   });
 }
+
+$(document).on("click","#businessBtn", function(){
+
+
+
+  latVal = parseFloat(this.value);
+  lngVal = parseFloat(this.name);
+
+  console.log(latVal);
+  console.log(lngVal);
+  //Updates the map with the right coordinates
+  map.setCenter({lat: latVal, lng: lngVal}); 
+
+  var location = {lat:latVal, lng:lngVal}
+
+  marker = new google.maps.Marker({
+    position: location,
+    map: map,
+  });
+
+
+});
