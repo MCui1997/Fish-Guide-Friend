@@ -4,10 +4,20 @@ var lngVal = 0;
 var map;
 var marker;
 
+if(localStorage.length!=0){
+  var zipcode = localStorage.getItem("zipcode");
+  $("#businessName").empty();
+  getZip(zipcode);
+  getYelp(zipcode);
+}
+
 //If the search button is clicked for zipcode
 $("#searchBtn").on("click",function(){
 
     var zipcode = $("#ziptext").val();
+
+    localStorage.setItem("zipcode",zipcode);
+
     getZip(zipcode);
     getYelp(zipcode);
 
