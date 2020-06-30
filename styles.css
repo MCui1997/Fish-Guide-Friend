@@ -7,12 +7,14 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 400px;
+    margin-top: 100px;
 
 }
 
 body {
     background-image: url("Assets/water.png");
     background-size: cover;
+    overflow-x: hidden;
     background-attachment: fixed;
 }
 
