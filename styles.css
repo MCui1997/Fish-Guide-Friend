@@ -4,4 +4,30 @@
     color: white;
     text-align: center;
 }
+#topPage{
 
+    text-align: center;
+}
+
+#search{
+
+    width: 50%;
+}
+
+#mainCont {
+
+    border-style: solid;
+    height: 400px;
+}
+
+#mapCont{
+
+    height: 400px;
+    border-left-style: solid;
+    border-right-style: solid;
+}
+
+#map {
+    height: 400px;  
+    width: 100%;  
+   }

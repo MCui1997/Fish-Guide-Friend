@@ -8,15 +8,11 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Bootstrap link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </head>
 <body>
     
-    <div class="container">
+    <div class="container" id = "topPage">
         <div id="title" class="jumbotron jumbotron-fluid">
             <div class="container">
               <h1 class="display-4">Fish Guide Friend</h1>
@@ -24,21 +20,48 @@
             </div>
           </div>
 
-    </div>
+    
 
     <div id="search" class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <input type="text" class="form-control" placeholder="Ex. 78738" id = "ziptext">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+          <button class="btn btn-outline-secondary" type="button" id="searchBtn">Button</button>
+        </div>
+      </div>
+    </div>
+
+      <div class = "container" id = "mainCont">
+        <div class = "row">
+          <div  class = "col-md-3" id = "yelpCont">
+
+          </div>
+
+
+          <div class = "col-md-6" id = "mapCont">
+            <div id = "map"></div>
+          </div>
+
+          <div class = "col-md-3" id = "weatherCont">
+
+
+          </div>
         </div>
       </div>
 
 
 
-
-<!-- jQuery link -->
+      
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <!-- Javascript link -->
 <script type="text/javascript" src = "scripts.js"></script>
+
+<script defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0vQ09dYxrc89pwXaL5xzOQfVCjQq32W8&callback=initMap">
+</script>
+
+
+
 </body>
 </html>
