@@ -86,6 +86,53 @@ function placeMarkerAndPanTo(latLng, map) {
       lngVal = marker.getPosition().lng();
       map.panTo(latLng);
 
-      console.log(latVal);
-      console.log(lngVal);
+      getWeather(latVal,lngVal);
 }
+
+// Function to update the weather when you click on the map
+function getWeather(latVal,lngVal){
+
+  var url = "https://api.openweathermap.org/data/2.5/onecall?lat="+latVal+"&lon="+lngVal+"&exclude=minutely&appid=d2473db2d15b3f33089244526bb7a7b6";
+    
+    
+  //Only proceed forward if it is a valid city
+
+
+
+    //Fetch the data from the website
+    fetch(url)
+      .then(function(response) {
+      
+      //Only proceed if valid city
+      if (response.ok) {
+          
+          $.ajax({
+              url: url,
+              method: "GET"
+            }).then(function(response) {
+
+              //Get values from JSON data
+              var tempKelvin = response.current.temp;
+              var humidity = response.current.humidity;
+              var wind = response.current.wind_speed;
+              var uv = response.current.uvi;
+
+
+              //Convert kelvings to celsius, then finally fahrenheit
+              var tempCelsius = tempKelvin - 273;
+              var tempFahrenheit = (tempCelsius * (9/5)) + 32;
+
+              //Display values to the screen
+              $("#tempLabel").text(Math.round(tempFahrenheit)+"°F");
+              $("#humidLabel").text(Math.round(humidity)+"%");
+              $("#windLabel").text(wind+" MPH");
+              $("#uvLabel").text(uv);
+              
+
+            });
+
+        }
+
+      });
+
+    }
