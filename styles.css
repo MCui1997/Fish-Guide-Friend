@@ -1,9 +1,16 @@
 #title {
     background: transparent;
-    background-color: blue;
     color: white;
     text-align: center;
 }
+
+body {
+    background-image: url("Assets/bobber.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
 #topPage{
 
     text-align: center;
