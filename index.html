@@ -17,14 +17,6 @@
     <div class="container" id = "topPage">
         <div id="title" class="jumbotron jumbotron-fluid">
             <div class="container">
-              <!-- <h1 class="display-4">Fish Guide Friend</h1> -->
-              <!-- <marquee behavior="scroll" direction="left">
-                <img src="https://img2.pngio.com/freshwater-fish-rainbow-trout-animal-fish-png-download-2374-freshwater-trout-png-2374_818.png" width="240" height="80" alt="Natural" />
-              </marquee>
-              <marquee behavior="scroll" direction="right">
-                <img src="https://proangler.us/wp-content/uploads/2014/06/fp_catfishhardheadleft.png" width="240" height="80" alt="Natural" />
-              </marquee> -->
-              <!-- <p class="lead">Your friend for finding fishing guides</p> -->
             </div>
           </div>
 
@@ -36,21 +28,23 @@
     <h1>Your friend for finding fishing guides</h1>
       <br>
       <br>
+
+      <div class = "row" id = "searchRow">
     <div id="search" class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Ex. 78738" id = "ziptext">
+        <input type="text" class="form-control" placeholder="Please enter a zipcode" id = "ziptext">
         <div class="form-inline form-group"></div>
         <div class="input-group-append">
           <button class="btn btn-primary" type="button" id="searchBtn"><i class="fa fa-search"></i></button>
         </div>
       </div>
     </div>
-
+  </div>
       <div class = "container" id = "mainCont">
         <div class = "row">
           <div  class = "col-md-3">
             <div class = " scrollable" id = "yelpCont">
 
-            <h3>Business</h3>
+            <h3 id = "businessTitle">Business</h3>
             <p id = "businessName"></p>
           </div>
         </div>
@@ -61,25 +55,29 @@
 
           <div class = "col-md-3" id = "weatherCont">
             <div class = "scrollable">
-            <h3>Weather Forecast</h3>
-            <h4>Current</h4>
+            <h3 id = "weatherTitle">Weather Forecast</h3>
+            <div class = "card">
+            <h4 id = "date1"></h4>
             <p> Temp: <span id = "tempLabel"></span> </p>
             <p> Humidity: <span id = "humidLabel"></span> </p>
             <p> Wind Speed: <span id = "windLabel"></span> </p>
             <p> UVI: <span id = "uvLabel"></span> </p>
+          </div>
 
-            <h4>Day 2</h4>
+          <div class = "card">
+            <h4 id = "date2"></h4>
             <p> Temp: <span id = "tempLabel1"></span> </p>
             <p> Humidity: <span id = "humidLabel1"></span> </p>
             <p> Wind Speed: <span id = "windLabel1"></span> </p>
             <p> UVI: <span id = "uvLabel1"></span> </p>
-
-            <h4>Day 3</h4>
+          </div>
+          <div class = "card">
+            <h4 id = "date3"></h4>
             <p> Temp: <span id = "tempLabel2"></span> </p>
             <p> Humidity: <span id = "humidLabel2"></span> </p>
             <p> Wind Speed: <span id = "windLabel2"></span> </p>
             <p> UVI: <span id = "uvLabel2"></span> </p>
-
+          </div>
           </div>
 
           </div>
@@ -92,6 +90,7 @@
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <!-- Javascript link -->
 <script type="text/javascript" src = "scripts.js"></script>
 <script type ="text/javascript" src = "fish.js"></script>

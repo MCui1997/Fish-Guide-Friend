@@ -4,10 +4,20 @@ var lngVal = 0;
 var map;
 var marker;
 
+if(localStorage.length!=0){
+  var zipcode = localStorage.getItem("zipcode");
+  $("#businessName").empty();
+  getZip(zipcode);
+  getYelp(zipcode);
+}
+
 //If the search button is clicked for zipcode
 $("#searchBtn").on("click",function(){
 
     var zipcode = $("#ziptext").val();
+
+    localStorage.setItem("zipcode",zipcode);
+
     getZip(zipcode);
     getYelp(zipcode);
 
@@ -121,7 +131,7 @@ function getWeather(latVal,lngVal){
               method: "GET"
             }).then(function(response) {
 
-              //Get values from JSON data
+              //Get values from JSON data of weather conditions
               var tempKelvin = response.current.temp;
               var humidity = response.current.humidity;
               var wind = response.current.wind_speed;
@@ -137,7 +147,16 @@ function getWeather(latVal,lngVal){
               var wind2 = response.daily[2].wind_speed;
               var uv2 = response.daily[2].uvi
 
-              console.log(response);
+              date = [];
+                     //Gets the dates and displays them
+                     for (var i =0; i<3; i++){
+
+                      j = i+1;
+                      date[i] = response.daily[i].dt;
+                      var day = moment.unix(date[i]);
+                      $("#date"+j).text(moment(day).format("MMM DD"));
+                  }
+
 
               //Convert kelvings to celsius, then finally fahrenheit
               var tempCelsius = tempKelvin - 273;
