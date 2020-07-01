@@ -160,14 +160,25 @@ function getWeather(latVal,lngVal){
               var wind2 = response.daily[2].wind_speed;
               var uv2 = response.daily[2].uvi
 
+              var tempKelvin3 = response.daily[3].temp.day;
+              var humidity3 = response.daily[3].humidity;
+              var wind3 = response.daily[3].wind_speed;
+              var uv3 = response.daily[3].uvi
+
+              var tempKelvin4 = response.daily[4].temp.day;
+              var humidity4 = response.daily[4].humidity;
+              var wind4 = response.daily[4].wind_speed;
+              var uv4 = response.daily[4].uvi
+
               date = [];
                      //Gets the dates and displays them
-                     for (var i =0; i<3; i++){
+                     for (var i =0; i<5; i++){
 
                       j = i+1;
                       date[i] = response.daily[i].dt;
                       var day = moment.unix(date[i]);
-                      $("#date"+j).text(moment(day).format("MMM DD"));
+                      $("#date"+j).text(moment(day).format("ddd"));
+                      $("#date"+j).append(", "+moment(day).format("MMM DD"));
                   }
 
 
@@ -180,6 +191,12 @@ function getWeather(latVal,lngVal){
 
               var tempCelsius2 = tempKelvin2 - 273;
               var tempFahrenheit2 = (tempCelsius2 * (9/5)) + 32;
+
+              var tempCelsius3 = tempKelvin3 - 273;
+              var tempFahrenheit3 = (tempCelsius3 * (9/5)) + 32;
+
+              var tempCelsius4 = tempKelvin4 - 273;
+              var tempFahrenheit4 = (tempCelsius4 * (9/5)) + 32;
 
               //Display values to the screen
               $("#tempLabel").text(Math.round(tempFahrenheit)+"°F");
@@ -196,6 +213,16 @@ function getWeather(latVal,lngVal){
               $("#humidLabel2").text(Math.round(humidity2)+"%");
               $("#windLabel2").text(wind2+" MPH");
               $("#uvLabel2").text(uv2);
+
+              $("#tempLabel3").text(Math.round(tempFahrenheit3)+"°F");
+              $("#humidLabel3").text(Math.round(humidity3)+"%");
+              $("#windLabel3").text(wind3+" MPH");
+              $("#uvLabel3").text(uv3);
+              
+              $("#tempLabel4").text(Math.round(tempFahrenheit4)+"°F");
+              $("#humidLabel4").text(Math.round(humidity4)+"%");
+              $("#windLabel4").text(wind4+" MPH");
+              $("#uvLabel4").text(uv4);
 
             });
 
