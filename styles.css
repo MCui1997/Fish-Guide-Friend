@@ -88,6 +88,29 @@ h1 {
 
 }
 
+h2 {
+    font-family: 'Piedra', cursive;
+}
+mark.red {
+    color: tomato;
+    background: transparent;
+}
+
+mark.blue {
+    color: #007bff;
+    background: transparent;
+}
+
+#bluem {
+    height: 30px;
+    width: 20px;
+}
+
+#redm {
+    height: 30px;
+    width: 20px;
+}
+
 .scrollable{
 
     height: 400px;
@@ -158,3 +181,4 @@ button:hover{
     font-family: 'Piedra', cursive;
 
 }
+
