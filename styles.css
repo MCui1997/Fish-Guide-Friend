@@ -83,6 +83,9 @@ h1 {
 
     text-align: center;
     background-color:#D1E8E2 !important;
+    font-family: 'Piedra', cursive;
+    border-radius: 25px;
+
 }
 
 .scrollable{
@@ -143,14 +146,15 @@ button:hover{
   color: white;
 }
 
-#copyright {
-    font-family: 'Piedra', cursive;
-    color: white;
-
-}
-
 #businessBtn{
 
     background-color: #D1E8E2 ;
+    border-radius: 25px;
+    font-family: 'Piedra', cursive;
+
 }
 
+#yelpLabel {
+    font-family: 'Piedra', cursive;
+
+}
