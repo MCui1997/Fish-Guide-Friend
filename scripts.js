@@ -44,6 +44,8 @@ function initMap() {
     map = new google.maps.Map(
     document.getElementById('map'), {zoom: 10, center: city});
 
+
+
     map.addListener('click', function(e) {
         placeMarkerAndPanTo(e.latLng, map);
       });
@@ -259,8 +261,7 @@ $(document).on("click","#businessBtn", function(){
   latVal = parseFloat(this.value);
   lngVal = parseFloat(this.name);
 
-  console.log(latVal);
-  console.log(lngVal);
+
   //Updates the map with the right coordinates
   map.setCenter({lat: latVal, lng: lngVal}); 
   getWeather(latVal,lngVal);
