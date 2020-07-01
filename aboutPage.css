@@ -14,7 +14,7 @@ h1{
 	margin: 0 auto;
 	margin-top: 30px;
 	width: 500px;
-	color: #F90;
+	color: teal;
 	text-align: center;
 
 }
@@ -76,7 +76,7 @@ form{
 	margin: 0 auto;
 	width: 500px;
 	padding-top: 40px;
-	color: white;
+	color: #D1E8E2 ;
 	position: relative;
 	
 	
@@ -113,8 +113,8 @@ textarea{
 	overflow: auto;
 }
 input[type="submit"]{
-	background-color: #F90;
-	color: white;
+	background-color: teal;
+	color: #D1E8E2 ;
 	height: 50px;
 	cursor: pointer;
 	margin-top: 30px;
@@ -126,7 +126,7 @@ input[type="submit"]{
 	transition: background-color 0.5s;
 }
 input[type="submit"]:hover{
-	background-color: #e58f0e;
+	background-color: teal;
 	
 }
 label{
