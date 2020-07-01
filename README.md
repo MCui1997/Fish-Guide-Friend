@@ -21,9 +21,14 @@ Fish Guide Friend is an application that allows the user to identify well rated 
 
 ## Links
 
-Github Repo: 
+Github Repo: https://github.com/MCui1997/Fish-Guide-Friend
 
-Github Pages:
+Github Pages: https://mcui1997.github.io/Fish-Guide-Friend/
 
 ## Screenshots
 
+![Alt text](Assets/screenshots/top.PNG "Main")
+
+![Alt text](Assets/screenshots/main.PNG "Main")
+
+![Alt text](Assets/screenshots/contact.PNG "Main")
