@@ -23,10 +23,12 @@ $("#searchBtn").on("click",function(){
 
       localStorage.setItem("zipcode",zipcode);
 
+      $("#businessName").empty();
+
       getZip(zipcode);
       getYelp(zipcode);
   
-      $("#businessName").empty();
+    
       
     }
 
