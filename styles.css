@@ -6,6 +6,7 @@
     background-image: url("Assets/logo2.png");
     background-position: center;
     background-repeat: no-repeat;
+    height: 150px;
     background-size: 400px;
     margin-top: 100px;
 
@@ -27,14 +28,13 @@ h1 {
     text-align: center;
 }
 
-#search{
-
-    width: 25%;
-}
 
 #searchRow{
 
-    text-align: center;
+    display: block;
+    margin:0 auto;
+    width: 60%;
+    margin-bottom: 25px;
 }
 
 .input-group-append{
@@ -83,4 +83,39 @@ h1 {
 ::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+button:hover{
+
+    opacity: .5;
+
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+
+  background: #007bb5;
+  color: white;
+}
+
+.fa-twitter {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-snapchat-ghost {
+  background: #007bb5;
+  color: white;
 }

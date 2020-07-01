@@ -16,12 +16,21 @@ $("#searchBtn").on("click",function(){
 
     var zipcode = $("#ziptext").val();
 
-    localStorage.setItem("zipcode",zipcode);
+    if(zipcode.length != 5){
+      return;
+    }
+    if (zipcode.match(/^[0-9]+$/) != null) { 
 
-    getZip(zipcode);
-    getYelp(zipcode);
+      localStorage.setItem("zipcode",zipcode);
 
-    $("#businessName").empty();
+      getZip(zipcode);
+      getYelp(zipcode);
+  
+      $("#businessName").empty();
+      
+    }
+
+
     
 })
 
@@ -43,6 +52,8 @@ function initMap() {
     // The map, centered at city
     map = new google.maps.Map(
     document.getElementById('map'), {zoom: 10, center: city});
+
+
 
     map.addListener('click', function(e) {
         placeMarkerAndPanTo(e.latLng, map);
@@ -259,8 +270,7 @@ $(document).on("click","#businessBtn", function(){
   latVal = parseFloat(this.value);
   lngVal = parseFloat(this.name);
 
-  console.log(latVal);
-  console.log(lngVal);
+
   //Updates the map with the right coordinates
   map.setCenter({lat: latVal, lng: lngVal}); 
   getWeather(latVal,lngVal);
