@@ -16,12 +16,21 @@ $("#searchBtn").on("click",function(){
 
     var zipcode = $("#ziptext").val();
 
-    localStorage.setItem("zipcode",zipcode);
+    if(zipcode.length != 5){
+      return;
+    }
+    if (zipcode.match(/^[0-9]+$/) != null) { 
 
-    getZip(zipcode);
-    getYelp(zipcode);
+      localStorage.setItem("zipcode",zipcode);
 
-    $("#businessName").empty();
+      getZip(zipcode);
+      getYelp(zipcode);
+  
+      $("#businessName").empty();
+      
+    }
+
+
     
 })
 
