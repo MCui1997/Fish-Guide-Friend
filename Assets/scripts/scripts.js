@@ -252,7 +252,7 @@ function getWeather(latVal,lngVal){
               
             
               // For loop to get all data values from businesses, can change how many businesses we want
-              for (var i =0; i <5; i++){
+              for (var i =0; i <10; i++){
 
                 var name = data.businesses[i].name;
                 var url = data.businesses[i].url;
