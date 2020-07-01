@@ -3,7 +3,7 @@
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    background-image: url("Assets/logo2.png");
+    background-image: url("Assets/pictures/logo2.png");
     background-position: center;
     background-repeat: no-repeat;
     height: 150px;
@@ -13,7 +13,7 @@
 }
 
 body {
-    background-image: url("Assets/water.png");
+    background-image: url("Assets/pictures/water.png");
     background-size: cover;
     overflow-x: hidden;
     background-attachment: fixed;
