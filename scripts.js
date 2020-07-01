@@ -279,9 +279,12 @@ $(document).on("click","#businessBtn", function(){
 
   var location = {lat:latVal, lng:lngVal}
 
-  marker = new google.maps.Marker({
+  let marker = new google.maps.Marker({
     position: location,
     map: map,
+    icon: {
+      url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+    }
   });
 
 
