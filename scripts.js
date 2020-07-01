@@ -27,7 +27,8 @@ $("#searchBtn").on("click",function(){
 
       getZip(zipcode);
       getYelp(zipcode);
-  
+      
+      $("#ziptext").val("");
     
       
     }
@@ -264,7 +265,8 @@ function getWeather(latVal,lngVal){
                   target: "_blank",
                   href: url,
                   style: "width: 100%; text-align:center;",
-                  text: "Yelp"
+                  text: "Yelp",
+                  id: "yelpLabel",
                 });
 
              
