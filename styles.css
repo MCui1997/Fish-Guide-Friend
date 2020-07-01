@@ -79,7 +79,9 @@ h1 {
 
 
 .card{
+
     text-align: center;
+    background-color:white !important;
 }
 
 .scrollable{
@@ -88,6 +90,14 @@ h1 {
     overflow-y: auto;
 }
 
+
+
+#vid{
+
+    border-style:solid ;
+    border-width: 1em;
+    border-color:black;
+}
 ::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
