@@ -6,9 +6,11 @@ Fish Guide Friend is an application that allows the user to identify well rated 
 
 ## User story
 
-
-AS A passionate fisherman I WANT an application that helps me identify a favorable fishing guides near me and provides a map of the surrounding area along with the current weather forecasts SO THAT I can plan a fun fishing trip
-
+```
+AS A passionate fisherman 
+I WANT an application that helps me identify a favorable fishing guides near me and provides a map of the surrounding area along with the current weather forecasts 
+SO THAT I can plan a fun fishing trip
+```
 
 ## API 
 
@@ -24,12 +26,6 @@ AS A passionate fisherman I WANT an application that helps me identify a favorab
 * User can click on Yelp link to be taken to Yelp website 
 * Youtube Videos for fishing beginners at the bottom
 * Link to contact page at bottom
-
-## Links
-
-Github Repo: https://github.com/MCui1997/Fish-Guide-Friend
-
-Github Pages: https://mcui1997.github.io/Fish-Guide-Friend/
 
 ## Screenshots
 
